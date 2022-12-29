@@ -252,6 +252,7 @@
 
 
 .isMobile .sublink{
+  @include from(lg){
   i{
     &.is-active{
       transform: rotate(180deg);
@@ -262,6 +263,7 @@
       transform: translateX(0);
 
   }
+}
 }
 .isdesktop .sublink:hover{
   i{
@@ -393,4 +395,9 @@
 }
 .sublink{
   cursor: pointer
+}
+.sublink:hover .submenu {
+  @include to(lg) {
+    min-height: unset;
+  }
 }
