@@ -1,0 +1,78 @@
+---
+// import menu from '../Helpers/menu.js';
+import menu from '../Helpers/menu.js';
+
+const path = '/';
+
+export interface Props {
+  page: string;
+}
+
+const { page } = Astro.props as Props;
+---
+
+<header class="main-header" id="main-header">
+  <div class="main-header__container">
+    <a href={path} id="Logo">
+      <img src={`${path}img/logo.svg`} alt="Logo" />
+    </a>
+    <nav class="main-nav">
+      <button class="hamburger hamburger--collapse toggle-menu" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <ul class="main-menu">
+        {
+          menu.map((link) => (
+            <li
+              class={`main-menu__item ${
+                page === link.title ? 'selected' : ''
+              } ${link.children ? 'item-submenu sublink' : ''}`}
+            >
+              {
+                !link.children
+                ? <a
+                  class={`main-menu__link `}
+                  href={`${link.link} `}
+                >
+                  {link.title}
+                </a>
+                : <span class="main-menu__link linkSub">{link.title}
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+
+                <ul class="submenu">
+                  {link.children.map((subLink) => (
+                    <li class="submenu__item">
+                      <a href={`${subLink.link}`} class="">
+                        {subLink.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              }
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <!-- <class class="aside">
+      <Social clase="aside-social" />
+    </class> -->
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.hamburger');
+  toggle.addEventListener('click', (e) => {
+    toggle.classList.toggle('is-active');
+    toggle.nextElementSibling.classList.toggle('is-active');
+  });
+  const itemSubmenu = document.querySelector('.linkSub');
+  console.log(itemSubmenu)
+  itemSubmenu.addEventListener('click', function (e) {
+    itemSubmenu.parentElement.querySelector('i').classList.toggle('is-active');
+    itemSubmenu.parentElement.querySelector('.submenu').classList.toggle('is-active');
+  });
+</script>

@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import About from '../sections/About.astro';
+import Main from '../components/nosotros/Main.astro'
+import BannerImg from '../components/nosotros/BannerImg.astro'
+import History from '../components/nosotros/History.astro';
+// import Mission from '../components/nosotros/Mission.astro';
+// import Mission from '../components/nosotros/Mission.jsx';
+import Carroucel from '../components/nosotros/Carroucel.jsx'
+---
+
+<Layout title="CE Academy" page="Nosotros">
+  <div class="Nosotros">
+    <Main />
+    <BannerImg/>
+    <History/>
+    <div class="Mission">
+      <h1>La misión detrás<br/>de ECACADEMY</h1>
+      <Carroucel client:load/>
+    </div>
+  </div>
+</Layout>

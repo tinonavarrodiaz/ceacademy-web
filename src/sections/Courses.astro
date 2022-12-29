@@ -1,0 +1,33 @@
+---
+import Card from '../components/Card.astro';
+
+const color = 'gray';
+const path = '/';
+---
+
+<section class="section Courses" id="Cursos">
+  <div class="Courses__container Courses__header col-2">
+    <h2>Estudios en trading</h2>
+    <a href="/trading" class="btn btn-dark">Todos los cursos</a>
+  </div>
+  <div class="Courses__container col-3">
+    <Card
+      image={`${path}img/course1-${color}.png`}
+      title="Curso uno"
+      body="Lorem ipsum dolor sit amet, consectere adipiscing elit. Feugiat feugiat congue viverra facilisis."
+      price="3000"
+    />
+    <Card
+      image={`${path}img/course2-${color}.png`}
+      title="Curso dos"
+      body="Lorem ipsum dolor sit amet, consectere adipiscing elit. Feugiat feugiat congue viverra facilisis."
+      price="3000"
+    />
+    <Card
+      image={`${path}img/course3-${color}.png`}
+      title="Curso tres"
+      body="Lorem ipsum dolor sit amet, consectere adipiscing elit. Feugiat feugiat congue viverra facilisis."
+      price="3000"
+    />
+  </div>
+</section>

@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CE Academy" page="Contacto">
+  <section class="section Contact" id="Contacto">
+    <div class="Card Contact__card">
+      <h1>Contáctenos</h1>
+      <p>
+        Si tiene alguna pregunta sobre Academy, complete el siguiente
+        formulario.
+      </p>
+      <img class="img-mail" src="/img/mail.svg" alt="mail" />
+      <form action="/php/send" method="post" class="form" id="form">
+        <div class="row col-2">
+          <div class="input-group">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="input-group">
+            <label for="email">Correo:</label>
+            <input type="email" name="email" id="email" />
+          </div>
+        </div>
+        <div class="row col-2">
+          <div class="input-group">
+            <label for="phone">Télefono:</label>
+            <input type="text" name="phone" id="phone" />
+          </div>
+          <div class="input-group">
+            <label for="email">Asunto:</label>
+            <input type="mail" name="subjet" id="email" />
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="msg">Mensaje:</label>
+          <textarea name="msg" id="msg"></textarea>
+        </div>
+        <footer class="Contact__footer">
+          <div class="notes" id="notes">
+            <img
+              class="img-loading"
+              id="img-loading"
+              src="/img/loading.svg"
+              alt=""
+            />
+          </div>
+          <button type="submit" class="btn btn-dark">Enviar</button>
+        </footer>
+      </form>
+    </div>
+  </section>
+</Layout>
+<script>
+  import emailjs from '@emailjs/browser';
+  const form = document.getElementById('form');
+  const notes = document.getElementById('notes');
+  let loading = document.getElementById('img-loading');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    notes.querySelector('p') ? notes.querySelector('p').classList.remove('show') : null
+    loading.classList.add('show');
+    notes.classList.add('show');
+    emailjs
+      .sendForm(
+        'service_wa3mxe2',
+        'template_yj872me',
+        e.target,
+        'p1wypBWUSXAr8_rJR'
+      )
+      .then((res) => {
+        // button.current.innerHTML = 'SEND IT!';
+        loading.classList.remove('show');
+        const p = document.createElement('p');
+        p.innerText='Mensaje Enviado con éxito, en  breve nos pondremos en contacto con usted';
+        p.classList.add('show');
+        notes.appendChild(p);
+        notes.classList.add('success');
+      })
+      .catch((err) => {
+        notes.classList.add('error');
+        notes.innerHTML='Ocurrio un error, por favor vuelva a intentarlo mas tarde';
+        console.log(err)
+      });
+  });
+</script>
