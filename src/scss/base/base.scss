@@ -23,7 +23,7 @@ body {
 main{
   margin-bottom: 3em;
   @include from(lg){
-    margin-bottom: 20vh;
+    margin-bottom: 5vh;
   }
   .isMobile &{
     @media screen and (min-width:1024px) and (orientation: landscape) {

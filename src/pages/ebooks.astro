@@ -1,5 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const url ="/img/ebook.png"
+
+const books = []
+
+for (var i = 0; i < 10; i++){
+  books.push(url)
+}
+console.log(books)
 ---
 
-<Layout title="CE Academy" page="Media" />
+<Layout title="CE Academy" page="Media">
+  <section class="Media">
+    <h1>Nuestros ebooks</h1>
+    <div class="Media__container">
+      {
+        books.map(el=>(
+          <a href="#">
+            <img src={el} alt="ebook" />
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const mediaLinks = [...document.querySelectorAll('.Media__container a')]
+  console.log(mediaLinks)
+  mediaLinks.map(link=>{
+    console.log(link)
+    link.addEventListener('click', e=>{
+      e.preventDefault()
+    })
+  })
+</script>
