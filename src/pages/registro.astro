@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="CE Academy" page="Nosotros">
+  <section class="form-section">
+    <form action="" class="form-registro">
+      <div class="group">
+        <label for="name"><i class="fa-solid fa-id-card-clip"></i></label>
+        <input type="text" name="name" id="name" placeholder="Nombre" />
+      </div>
+      <div class="group">
+        <label for="email"><i class="fa-solid fa-envelope"></i></label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Correo Electrónico"
+        />
+      </div>
+      <div class="group">
+        <label for="password"><i class="fa-solid fa-lock"></i></label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Contraseña"
+        />
+      </div>
+      <div class="group">
+        <label for="password-validator"><i class="fa-solid fa-lock"></i></label>
+        <input
+          type="password"
+          name="password-validator"
+          id="password-validator"
+          placeholder="Repetir Contraseña"
+        />
+      </div>
+      <div class="form-registro__footer">
+        <div class="notes show"></div>
+        <button class="btn btn-dark">Registrar</button>
+      </div>
+    </form>
+  </section>
+</Layout>

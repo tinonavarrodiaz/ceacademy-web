@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<script>
+  console.log(localStorage.getItem("access"));
+  const access = localStorage.getItem("access");
+  if (!access) location.href = "login";
+</script>
+
+<Layout title="CE Academy" page="Estudios en trading">
+  <h1 style="margin-top: 10vh;">media</h1>
+</Layout>
