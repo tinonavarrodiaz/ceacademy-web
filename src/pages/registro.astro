@@ -2,6 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
+<script>
+  import { app, auth } from "../Helpers/firebase";
+  console.log(auth);
+</script>
+
 <Layout title="CE Academy" page="Nosotros">
   <section class="form-section">
     <form action="" class="form-registro">
@@ -10,11 +15,11 @@ import Layout from "../layouts/Layout.astro";
         <input type="text" name="name" id="name" placeholder="Nombre" />
       </div>
       <div class="group">
-        <label for="email"><i class="fa-solid fa-envelope"></i></label>
+        <label for="email1"><i class="fa-solid fa-envelope"></i></label>
         <input
           type="email"
           name="email"
-          id="email"
+          id="email1"
           placeholder="Correo Electrónico"
         />
       </div>
