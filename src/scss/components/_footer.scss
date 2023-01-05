@@ -178,6 +178,9 @@
   text-transform: uppercase;
   // padding: 0 1em;
   height: 100%;
+  h3{
+    font-size: 1em !important;
+  }
   @include from(lg){
     text-align: right;
     display: flex;

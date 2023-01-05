@@ -53,12 +53,14 @@
       margin-bottom: .5em;
       line-height: 1;
       @include from(lg){
-        font-size: 1.5vw;
+        font-size: 1.4em !important;
+        // font-size: 1.5vw;
       }
 
     }
     p{
       margin-bottom: 0;
+      font-size: 1.1em;
     }
   }
 }

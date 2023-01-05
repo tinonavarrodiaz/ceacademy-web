@@ -14,7 +14,7 @@ $linear-gradient: linear-gradient(to right, #3264f5 2%, #7004bc 82%);
 
   @include from(m) {
     --header-height: 100px;
-    --font-size: 18px;
+    --font-size: 15px;
   }
 
   @include from(l) {
@@ -23,11 +23,11 @@ $linear-gradient: linear-gradient(to right, #3264f5 2%, #7004bc 82%);
   }
 
   @include tablet() {
-    --font-size: 2.5vw;
+    --font-size: 2vw;
   }
 
   @include tabletLandscape() {
-    --font-size: 1.5vw;
+    --font-size: 1.2vw;
   }
 }
 
