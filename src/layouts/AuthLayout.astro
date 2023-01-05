@@ -1,0 +1,58 @@
+---
+import "../scss/styles.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title: string;
+  page: string;
+}
+
+const { title, page } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href={`/icons.css`} />
+
+    <title>CEACADEMY</title>
+    <meta name="referrer" content="origin" />
+    <meta
+      name="description"
+      content="La salud financiera no se trata de un destino, sino de un camino lleno de toma de decisiones favorables para tus finanzas, felicidad y éxito."
+    />
+    <meta property="og:title" content="CEACADEMY" />
+    <meta
+      property="og:description"
+      content="La salud financiera no se trata de un destino, sino de un camino lleno de toma de decisiones favorables para tus finanzas, felicidad y éxito."
+    />
+    <meta property="og:url" content="https://ceacademy.com.mx/" />
+    <meta property="og:site_name" content="CEACADEMY" />
+    <meta property="og:image" content="https://i.ibb.co/R0sKNgB/banner.jpg" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="843" />
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="/css/aos.css" media="(min-width: 1024px)" />
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+    ></script> -->
+    <script is:inline src="/js/aos.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/0372b18be3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
