@@ -52,12 +52,15 @@ window.addEventListener('scroll', (e) => {
   let scrollTop = window.scrollY;
   if (scrollTop >= screenHeight * 0.5) {
     totop.classList.add('show');
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      document.documentElement.style.setProperty('--header-height', '10vh');
-    }
+    // if (window.matchMedia('(min-width: 1024px)').matches) {
+    //   document.documentElement.style.setProperty(
+    //     '--header-height',
+    //     headerHeight
+    //   );
+    // }
   } else {
     totop.classList.remove('show');
-    document.documentElement.style.setProperty('--header-height', headerHeight);
+    // document.documentElement.style.setProperty('--header-height', headerHeight);
   }
 });
 
@@ -69,3 +72,12 @@ function toTop() {
     behavior: 'smooth',
   });
 }
+
+AOS.init({
+  startEvent: 'load',
+  easing: 'ease-out-back',
+  duration: 850,
+  // startEvent: 'DOMContentLoaded',
+  useClassNames: true,
+  // once: true,
+});

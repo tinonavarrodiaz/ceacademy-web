@@ -1,7 +1,7 @@
 ---
-import Social from './Social.astro';
-import sponsors from '../Helpers/sponsors'
-const path = '/';
+import Social from "./Social.astro";
+import sponsors from "../Helpers/sponsors";
+const path = "/";
 ---
 
 <footer class="main-footer">
@@ -10,18 +10,7 @@ const path = '/';
       <img src={`/img/logo.svg`} alt="Logo" class="main-footer__logo" />
       <Social />
     </div>
-    <div class="sponsors">
-      <h3>Patrocinios</h3>
-      <ul class="sponsors_container">
-      {
-        sponsors.map(el=>(
-          <li>
-            <a href={el.url} target="_blank">{el.url}</a>
-          </li>
-        ))
-      }
-      </ul>
-    </div>
+    <div class="sponsors"></div>
     <div class="newsletter">
       <div class="newsletter__header">
         <h3>Suscríbete a nuestro newsletter</h3>
@@ -33,13 +22,13 @@ const path = '/';
           id="email"
           placeholder="Escribe tu email"
         />
-        <button type="submit" class="btn btn-dark btn-small">Suscribirme</button>
+        <button type="submit" class="btn btn-dark btn-small">Suscribirme</button
+        >
       </form>
     </div>
   </div>
   <div class="bottom-bar">
-      <a href="/privacidad">Aviso de Privacidad</a>
+    <a href="/privacidad">Aviso de Privacidad</a>
   </div>
 </footer>
-<script>
-</script>
+<script></script>

@@ -15,10 +15,7 @@ body {
   flex-direction: column;
   background-color: #fefefe;
   color: $font-color;
-  font-size: 16px;
-  @include from(lg){
-    font-size: 1.2vw;
-  }
+  font-size: var(--font-size)
 }
 main{
   margin-bottom: 3em;
@@ -80,4 +77,7 @@ textarea {
 
 ul {
   @extend %list-style;
+}
+.lh1{
+  line-height: 1 !important;
 }

@@ -12,10 +12,10 @@
   transform: translateX(-50%);
   transition: all .3s;
   // background-color: tomato;
-  * {
-    transition: all .3s;
+  // * {
+  //   transition: all .3s;
 
-  }
+  // }
   &__container{
     width: 90%;
     max-width: 1400px;
@@ -27,6 +27,7 @@
     align-items: center;
     @include from(l){
       width: 90%;
+      justify-content: flex-start;
     }
 
     & > a{
@@ -91,13 +92,6 @@
     overflow: unset;
     display:  flex;
     color: inherit;
-    @include from(lg){
-      font-size: 80%;
-
-    }
-    @include from(xl){
-      font-size: 70%;
-    }
     & .main-menu__item{
       margin-right: var(--mr);
       position: relative;
@@ -318,7 +312,6 @@
       overflow: hidden;
       transition: all 0.3s linear;
       display: block;
-      font-size: 1.8em;
 
       &__item {
         line-height: 3em;

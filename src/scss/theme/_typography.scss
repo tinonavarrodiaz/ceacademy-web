@@ -4,15 +4,11 @@
   @return math.div($px, 16px) * 1rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&family=Work+Sans:wght@200;300;400&display=swap');
 
-
-// @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600&display=swap');
 // Font families
-// $heading-font: 'Plus Jakarta Sans', sans-serif;
-// $body-font: 'Plus Jakarta Sans', sans-serif;
-$heading-font: 'Roboto', sans-serif;
-$body-font: 'Montserrat', sans-serif;
+$heading-font: 'Noto Sans', sans-serif;
+$body-font: 'Work Sans', sans-serif;
 
 // CSS variables for typography
 :root {
@@ -266,6 +262,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 100;
+  font-weight: 400;
   font-family: $heading-font;
 }

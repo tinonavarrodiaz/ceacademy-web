@@ -23,7 +23,7 @@ export default function App() {
       >
         {mission.map((item, i) => (
           <SwiperSlide key={i}>
-            <div className="slider-con">
+            <div className="slider-con" data-aos="zoom-in" data-delay="200">
               <div className="con">
                 <img
                   className="slider-img"

@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="CE Academy" page="Contacto">
-  <section class="section Contact" id="Contacto">
+  <section class="section Contact" id="Contacto" data-aos="fade-left">
     <div class="Card Contact__card">
       <h1>Contáctenos</h1>
       <p>
@@ -52,35 +52,39 @@ import Layout from '../layouts/Layout.astro';
   </section>
 </Layout>
 <script>
-  import emailjs from '@emailjs/browser';
-  const form = document.getElementById('form');
-  const notes = document.getElementById('notes');
-  let loading = document.getElementById('img-loading');
-  form.addEventListener('submit', (e) => {
+  import emailjs from "@emailjs/browser";
+  const form = document.getElementById("form");
+  const notes = document.getElementById("notes");
+  let loading = document.getElementById("img-loading");
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    notes.querySelector('p') ? notes.querySelector('p').classList.remove('show') : null
-    loading.classList.add('show');
-    notes.classList.add('show');
+    notes.querySelector("p")
+      ? notes.querySelector("p").classList.remove("show")
+      : null;
+    loading.classList.add("show");
+    notes.classList.add("show");
     emailjs
       .sendForm(
-        'service_wa3mxe2',
-        'template_yj872me',
+        "service_wa3mxe2",
+        "template_yj872me",
         e.target,
-        'p1wypBWUSXAr8_rJR'
+        "p1wypBWUSXAr8_rJR"
       )
       .then((res) => {
         // button.current.innerHTML = 'SEND IT!';
-        loading.classList.remove('show');
-        const p = document.createElement('p');
-        p.innerText='Mensaje Enviado con éxito, en  breve nos pondremos en contacto con usted';
-        p.classList.add('show');
+        loading.classList.remove("show");
+        const p = document.createElement("p");
+        p.innerText =
+          "Mensaje Enviado con éxito, en  breve nos pondremos en contacto con usted";
+        p.classList.add("show");
         notes.appendChild(p);
-        notes.classList.add('success');
+        notes.classList.add("success");
       })
       .catch((err) => {
-        notes.classList.add('error');
-        notes.innerHTML='Ocurrio un error, por favor vuelva a intentarlo mas tarde';
-        console.log(err)
+        notes.classList.add("error");
+        notes.innerHTML =
+          "Ocurrio un error, por favor vuelva a intentarlo mas tarde";
+        console.log(err);
       });
   });
 </script>

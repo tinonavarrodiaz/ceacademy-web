@@ -1,9 +1,11 @@
 @import "nh-grid/nh-grid";
 @import 'hamburgers/dist/hamburgers.min.css';
-@import 'aos/dist/aos.css';
 // @import 'statics/spop.css';
 // @import 'rsuite/dist/rsuite.min.css';
+// @import 'aos/dist/aos.css';
+.isdesktop{
 
+}
 
 $breakpoints : (s : 0,
   m : 768px,
@@ -28,8 +30,8 @@ $legacy : true; // Soporte para versiones antiguas
 
 // Config
 @import "config/functions";
-@import "config/variables";
 @import "config/mixins";
+@import "config/variables";
 
 // Theme (colors and fonts)
 @import "theme/typography";
@@ -46,7 +48,7 @@ $legacy : true; // Soporte para versiones antiguas
 // Crea los archivos adicionales que necesites (uno por componente)
 @import "components/buttons";
 @import "components/menus";
-@import "components/header";
+@import "components/header1";
 @import "components/footer";
 
 @import "sections/sections";
@@ -67,6 +69,9 @@ $legacy : true; // Soporte para versiones antiguas
 // o resolver situaciones extremas. Se espera poder mejorarlos luego.
 @import "hacks/hacks";
 
+body{
+  // transform: scale(1.1);
+}
 .totop{
   --size: 2em;
   display: flex;

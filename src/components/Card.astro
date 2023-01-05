@@ -4,12 +4,13 @@ export interface Props {
   title: string;
   body: string;
   price: string;
+  delay: string;
 }
 
-const { title, body, image, price } = Astro.props;
+const { title, body, image, price, delay } = Astro.props;
 ---
 
-<figure class="card">
+<figure class="card" data-aos="flip-left" data-aos-delay={delay}>
   <img src={image} alt={title} />
   <figcaption>
     {title}
